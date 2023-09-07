@@ -1,6 +1,7 @@
 console.info('shortcuts.js begin', window?.location?.href);
 
-import { getStorageItems, initShortcutsPage, mountShortcutsPage } from '@ahstream/hx-chrome-lib';
+import { getStorageItems } from '@ahstream/hx-lib';
+import { initShortcutsPage, mountShortcutsPage } from '@ahstream/hx-chrome-lib';
 
 initShortcutsPage();
 const VALID_URLS = null;

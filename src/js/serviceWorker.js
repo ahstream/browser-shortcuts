@@ -1,12 +1,13 @@
 console.info('serviceWorker.js begin');
 
 import { defaultOptions, overrideOptions } from '../config/config';
-import { defaultMessageHandler, initOptions } from '@ahstream/hx-chrome-lib';
+import { initStorageWithOptions } from '@ahstream/hx-lib';
+import { defaultMessageHandler } from '@ahstream/hx-chrome-lib';
 
-const customOptions = { foo: 'bar' };
+const customStorage = { foo: 'bar' };
 
 chrome.runtime.onInstalled.addListener(() => {
-  initOptions(defaultOptions, overrideOptions, customOptions);
+  initStorageWithOptions(defaultOptions, overrideOptions, customStorage);
   console.info('Extension successfully installed!');
 });
 

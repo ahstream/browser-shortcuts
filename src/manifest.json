@@ -1,37 +1,31 @@
 {
-    "name": "browser-shortcuts",
-    "description": "Browser Shortcuts Chrome Extension",
-    "version": "1.0.0",
-    "manifest_version": 3,
-    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyWKYQOoxLfwIq2q7y2fLM6tOu5mhzgkj3wrWjB1FpLoAqmoCO5GLLs6SRECcYQErOyS9PekFk8MfLN0Q24yyJnH9sFR1ANsrfgQ3168h+5MaIDgSr3fNyFdZcZ9apieDSe0mxIKxzv8rJfxl8FkdZl1c2+p6FPS+Y8c2BDpnxDEFRxvSpjh6JOTjGJcpJZJG5Q0FZLTU0LQpXrfehXdu1e1QEXLho13awPCjbAdEl4opLYk1LWPBBIdgd8t6CthC7GrEBGon89pbOS7nJahvffQff5bPmB7Uv1qnoS2+jZcoY7b4sDRv6kdPVZML3EkQecycLII/Y0Os7GRSPAm5QIDAQAB",
-        "permissions": [
-        "storage",
-        "unlimitedStorage",
-        "activeTab",
-        "tabs",
-        "webNavigation"
-    ],
-    "options_ui": {
-        "page": "options.html",
-        "open_in_tab": true
-    },
-    "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "/images/icons/16.png",
-            "32": "/images/icons/32.png",
-            "48": "/images/icons/48.png",
-            "128": "/images/icons/128.png"
-        }
-    },
-    "icons": {
-        "16": "/images/icons/16.png",
-        "32": "/images/icons/32.png",
-        "48": "/images/icons/48.png",
-        "128": "/images/icons/128.png"
-    },
-    "background": {
-        "service_worker": "serviceWorker.js"
-    },
-    "content_scripts": []
+  "name": "browser-shortcuts",
+  "description": "Browser Shortcuts Chrome Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyWKYQOoxLfwIq2q7y2fLM6tOu5mhzgkj3wrWjB1FpLoAqmoCO5GLLs6SRECcYQErOyS9PekFk8MfLN0Q24yyJnH9sFR1ANsrfgQ3168h+5MaIDgSr3fNyFdZcZ9apieDSe0mxIKxzv8rJfxl8FkdZl1c2+p6FPS+Y8c2BDpnxDEFRxvSpjh6JOTjGJcpJZJG5Q0FZLTU0LQpXrfehXdu1e1QEXLho13awPCjbAdEl4opLYk1LWPBBIdgd8t6CthC7GrEBGon89pbOS7nJahvffQff5bPmB7Uv1qnoS2+jZcoY7b4sDRv6kdPVZML3EkQecycLII/Y0Os7GRSPAm5QIDAQAB",
+  "permissions": ["storage", "unlimitedStorage", "activeTab", "tabs", "webNavigation"],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/icons/16.png",
+      "32": "/images/icons/32.png",
+      "48": "/images/icons/48.png",
+      "128": "/images/icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/icons/16.png",
+    "32": "/images/icons/32.png",
+    "48": "/images/icons/48.png",
+    "128": "/images/icons/128.png"
+  },
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "content_scripts": []
 }

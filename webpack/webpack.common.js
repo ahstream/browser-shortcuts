@@ -14,6 +14,14 @@ module.exports = {
     help: './src/pages/help/help.js',
     shortcuts: './src/pages/shortcuts/shortcuts.js',
   },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, '../', 'dist'),
+    clean: true,
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
+  },
   module: {
     rules: [
       {
@@ -27,9 +35,14 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    minimizer: [new CssMinimizerPlugin()],
-  },
+  plugins: [
+    new ESLintPlugin(),
+    new MiniCssExtractPlugin({ filename: 'styles/[name].css' }),
+    new CopyPlugin({ patterns: [{ from: 'src/manifest.json' }] }),
+    new CopyPlugin({ patterns: [{ from: 'src/images/', to: 'images/' }] }),
+    new CopyPlugin({ patterns: [{ from: 'src/pages/**/*.html', to: '[name][ext]' }] }),
+    new NodePolyfillPlugin(),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
     fallback: {
@@ -39,17 +52,4 @@ module.exports = {
       stream: require.resolve('readable-stream'),
     },
   },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '../', 'dist'),
-    clean: true,
-  },
-  plugins: [
-    new ESLintPlugin(),
-    new MiniCssExtractPlugin({ filename: 'styles/[name].css' }),
-    new CopyPlugin({ patterns: [{ from: 'src/manifest.json' }] }),
-    new CopyPlugin({ patterns: [{ from: 'src/images/', to: 'images/' }] }),
-    new CopyPlugin({ patterns: [{ from: 'src/pages/**/*.html', to: '[name][ext]' }] }),
-    new NodePolyfillPlugin(),
-  ],
 };
